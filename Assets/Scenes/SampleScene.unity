@@ -256,7 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cube: {fileID: 1243376621}
   width: 30
-  depth: 20
+  depth: 30
 --- !u!1001 &2699463898849819452
 PrefabInstance:
   m_ObjectHideFlags: 0
