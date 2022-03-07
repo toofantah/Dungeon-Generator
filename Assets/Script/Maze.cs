@@ -34,7 +34,7 @@ public class Maze : MonoBehaviour
         }
     }
 
-    private void Generate()
+    public virtual void Generate()
     {
         for (int X = 0; X < depth; X++)
         {
