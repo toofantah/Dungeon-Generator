@@ -20,8 +20,8 @@ public class DrunkardCrawler : Maze
     void CrawlVertically()
     {
         bool isDone = false;
-        int x = UnityEngine.Random.Range(0, width);
-        int z = 0;
+        int x = UnityEngine.Random.Range(1, width-1);
+        int z = 1;
 
         while (!isDone)
         {
@@ -33,15 +33,16 @@ public class DrunkardCrawler : Maze
                 z += UnityEngine.Random.Range(-0, 2);
 
 
-            isDone |= (x < 0 || x >= width || z < 0 || z >= depth);
+            isDone |= (x < 1 || x >= width - 1 || z < 1 || z >= depth - 1);
+
         }
     }
 
     void CrawlHorizontaly()
     {
         bool isDone = false;
-        int x = 0;
-        int z = UnityEngine.Random.Range(0,depth);
+        int x = 1;
+        int z = UnityEngine.Random.Range(1,depth-1);
 
         while (!isDone)
         {
@@ -53,7 +54,7 @@ public class DrunkardCrawler : Maze
                 z += UnityEngine.Random.Range(-1, 2);
 
 
-            isDone |= (x < 0 || x >= width || z < 0 || z >= depth);
+            isDone |= (x < 1 || x >= width - 1 || z < 1 || z >= depth - 1);
         }
     }
 }
