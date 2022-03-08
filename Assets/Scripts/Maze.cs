@@ -112,7 +112,7 @@ public class Maze : MonoBehaviour
                     //Vector3 pos = new Vector3(x * scale, 0, z * scale);
                     //GameObject wall = GameObject.CreatePrimitive(PrimitiveType.Cube);
                     //wall.transform.localScale = new Vector3(scale, scale, scale);
-                    // wall.transform.position = pos;
+                    //wall.transform.position = pos;
                 }
                 else if (Search2D(x, z, new int[] { 5, 1, 5, 0, 0, 1, 5, 1, 5 })) //horizontal end piece -|
                 {
@@ -209,6 +209,32 @@ public class Maze : MonoBehaviour
 
                     GameObject ceiling = Instantiate(ceilingPiece);
                     ceiling.transform.position = new Vector3(x * scale, 0, z * scale);
+
+                    LocateWalls(x, z);
+                    if (top)
+                    {
+                        GameObject wall1 = Instantiate(wallPiece);
+                        wall1.transform.position = new Vector3(x * scale, 0, z * scale);
+                        wall1.transform.Rotate(0, 90, 0);
+                    }
+                    if (bottom)
+                    {
+                        GameObject wall2 = Instantiate(wallPiece);
+                        wall2.transform.position = new Vector3(x * scale, 0, z * scale);
+                        wall2.transform.Rotate(0, 270, 0);
+                    }
+                    if (right)
+                    {
+                        GameObject wall3 = Instantiate(wallPiece);
+                        wall3.transform.position = new Vector3(x * scale, 0, z * scale);
+                        wall3.transform.Rotate(0, 180, 0);
+                    }
+                    if (left)
+                    {
+                        GameObject wall1 = Instantiate(wallPiece);
+                        wall1.transform.position = new Vector3(x * scale, 0, z * scale);
+                        
+                    }
                 }
                 else
                 {
@@ -222,6 +248,25 @@ public class Maze : MonoBehaviour
             }
     }
 
+    bool top;
+    bool bottom;
+    bool right;
+    bool left;
+
+    public void LocateWalls(int x, int z)
+    {
+        top = false;
+        bottom = false;
+        right = false;
+        left = false;
+
+        if (x <= 0 || x >= width - 1 || z >= depth - 1) return;
+        if (map[x, z + 1] == 1) top = true;
+        if (map[x, z - 1] == 1) bottom = true;
+        if (map[x + 1, z] == 1) right = true;
+        if (map[x - 1, z] == 1) left = true;
+
+    }
     bool Search2D(int c, int r, int[] pattern)
     {
         int count = 0;
