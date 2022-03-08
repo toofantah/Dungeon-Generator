@@ -31,7 +31,9 @@ public class Maze : MonoBehaviour
     public GameObject corner;
     public GameObject tIntersection;
     public GameObject endpiece;
-
+    public GameObject wallPiece;
+    public GameObject floorPiece;
+    public GameObject ceilingPiece;
 
 
 
@@ -108,9 +110,9 @@ public class Maze : MonoBehaviour
                 if (map[x, z] == 1)
                 {
                     //Vector3 pos = new Vector3(x * scale, 0, z * scale);
-                   //GameObject wall = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    //GameObject wall = GameObject.CreatePrimitive(PrimitiveType.Cube);
                     //wall.transform.localScale = new Vector3(scale, scale, scale);
-                   // wall.transform.position = pos;
+                    // wall.transform.position = pos;
                 }
                 else if (Search2D(x, z, new int[] { 5, 1, 5, 0, 0, 1, 5, 1, 5 })) //horizontal end piece -|
                 {
@@ -122,7 +124,7 @@ public class Maze : MonoBehaviour
                 {
                     GameObject block = Instantiate(endpiece);
                     block.transform.position = new Vector3(x * scale, 0, z * scale);
-                    
+
                 }
                 else if (Search2D(x, z, new int[] { 5, 1, 5, 1, 0, 1, 5, 0, 5 })) //vertical end piece T
                 {
@@ -136,7 +138,7 @@ public class Maze : MonoBehaviour
                     block.transform.position = new Vector3(x * scale, 0, z * scale);
                     block.transform.Rotate(0, -90, 0);
                 }
-                else if (Search2D(x,z, new int[] { 5, 0, 5, 1, 0, 1, 5, 0, 5 })) //vertical straight
+                else if (Search2D(x, z, new int[] { 5, 0, 5, 1, 0, 1, 5, 0, 5 })) //vertical straight
                 {
                     Vector3 pos = new Vector3(x * scale, 0, z * scale);
                     GameObject go = Instantiate(straight, pos, Quaternion.identity);
@@ -146,7 +148,7 @@ public class Maze : MonoBehaviour
                 {
                     Vector3 pos = new Vector3(x * scale, 0, z * scale);
                     GameObject go = Instantiate(straight, pos, Quaternion.identity);
-                    
+
                 }
                 else if (Search2D(x, z, new int[] { 1, 0, 1, 0, 0, 0, 1, 0, 1 })) //crossroad
                 {
@@ -198,6 +200,15 @@ public class Maze : MonoBehaviour
                 {
                     GameObject go = Instantiate(tIntersection);
                     go.transform.position = new Vector3(x * scale, 0, z * scale);
+                }
+                else if (map[x, z] == 0 && (CountSquareNeighbours(x, z) > 1 && CountDiagonalNeighbours(x, z) >= 1 ||
+                                            CountSquareNeighbours(x, z) >= 1 && CountDiagonalNeighbours(x, z) > 1))
+                {
+                    GameObject floor = Instantiate(floorPiece);
+                    floor.transform.position = new Vector3(x * scale, 0, z * scale);
+
+                    GameObject ceiling = Instantiate(ceilingPiece);
+                    ceiling.transform.position = new Vector3(x * scale, 0, z * scale);
                 }
                 else
                 {
