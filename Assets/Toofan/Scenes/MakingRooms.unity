@@ -347,8 +347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33bbdb95ccc4b4577a62495732a02d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 30
-  depth: 30
+  width: 50
+  depth: 50
   scale: 6
   straight: {fileID: 1843764564772856294, guid: 514122bd3ecc01142942466194872b03, type: 3}
   crossroad: {fileID: 3321026005095275184, guid: 60926fd6973e1c04fb2858ada2379615, type: 3}
