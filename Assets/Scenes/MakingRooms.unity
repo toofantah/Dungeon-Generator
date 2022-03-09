@@ -358,6 +358,8 @@ MonoBehaviour:
   wallPiece: {fileID: 5485983426400994550, guid: ef9cf6087c16e274fafa9af723263585, type: 3}
   floorPiece: {fileID: 2761467749126858406, guid: 29ef722ea2eb7384ab59eb2b7ad59492, type: 3}
   ceilingPiece: {fileID: 6572561967077212860, guid: 67b084316f3690d4e80c1db28585e7e2, type: 3}
+  pillarPiece: {fileID: 4213658213049453550, guid: 26ecd22e24a4e964ab01f03b258a1a69, type: 3}
+  doorPiece: {fileID: 7066185847941761761, guid: 54323ccfa21bf7f42b9ebee2a70b62cf, type: 3}
   FPC: {fileID: 443153702}
 --- !u!850595691 &1160735724
 LightingSettings:
