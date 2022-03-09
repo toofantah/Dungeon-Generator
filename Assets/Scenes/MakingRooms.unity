@@ -355,9 +355,9 @@ MonoBehaviour:
   corner: {fileID: 2799216752450882715, guid: 8d45d70649888b34e9380c509e7cf583, type: 3}
   tIntersection: {fileID: 2776479966165017313, guid: 60ee1574a52083b41b5aac844d8d6a17, type: 3}
   endpiece: {fileID: 1280974591470625147, guid: dfe5fedc4e5f6bf45ab7c08f9d9fdc20, type: 3}
-  wallPiece: {fileID: 4690578239932536988, guid: 0a1a2571a388c604c9f1942be666737d, type: 3}
+  wallPiece: {fileID: 5485983426400994550, guid: ef9cf6087c16e274fafa9af723263585, type: 3}
   floorPiece: {fileID: 2761467749126858406, guid: 29ef722ea2eb7384ab59eb2b7ad59492, type: 3}
-  ceilingPiece: {fileID: 4633200079999960036, guid: d57ae8778ebbd18449b15a3612b4f949, type: 3}
+  ceilingPiece: {fileID: 6572561967077212860, guid: 67b084316f3690d4e80c1db28585e7e2, type: 3}
   FPC: {fileID: 443153702}
 --- !u!850595691 &1160735724
 LightingSettings:

@@ -215,25 +215,29 @@ public class Maze : MonoBehaviour
                     {
                         GameObject wall1 = Instantiate(wallPiece);
                         wall1.transform.position = new Vector3(x * scale, 0, z * scale);
-                        wall1.transform.Rotate(0, 90, 0);
+                        //wall1.transform.Rotate(0, 0, 0);
+                        wall1.name = "Top Wall";
                     }
                     if (bottom)
                     {
                         GameObject wall2 = Instantiate(wallPiece);
                         wall2.transform.position = new Vector3(x * scale, 0, z * scale);
-                        wall2.transform.Rotate(0, 270, 0);
+                        wall2.transform.Rotate(0, 180, 0);
+                        wall2.name = "Bottom Wall";
                     }
                     if (right)
                     {
                         GameObject wall3 = Instantiate(wallPiece);
                         wall3.transform.position = new Vector3(x * scale, 0, z * scale);
-                        wall3.transform.Rotate(0, 180, 0);
+                        wall3.transform.Rotate(0, 90, 0);
+                        wall3.name = "Right Wall";
                     }
                     if (left)
                     {
-                        GameObject wall1 = Instantiate(wallPiece);
-                        wall1.transform.position = new Vector3(x * scale, 0, z * scale);
-                        
+                        GameObject wall4 = Instantiate(wallPiece);
+                        wall4.transform.position = new Vector3(x * scale, 0, z * scale);
+                        wall4.name = "Right Wall";
+                        wall4.transform.Rotate(0, 270, 0);
                     }
                 }
                 else
